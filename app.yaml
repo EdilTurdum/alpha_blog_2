@@ -1,0 +1,10 @@
+runtime: ruby30
+
+entrypoint: bundle exec puma -C ./puma.rb
+
+instance_class: F2
+
+handlers:
+- url: /favicon.ico
+  static_dir: public/favicon.ico
+  secure: always

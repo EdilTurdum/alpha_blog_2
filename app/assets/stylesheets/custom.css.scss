@@ -1,0 +1,39 @@
+@import 'bootstrap';
+.navbar {
+    background-color: black !important;
+}
+.nav-link {
+    color: white !important;
+}
+
+#logo {
+    color: white;
+    font-weight: bold;
+}
+
+#home-container {
+    margin-top: 25px;
+    background-image: url(/assets/background2.jpg);
+    background-repeat: no-repeat;
+    background-position: 30% 60%;
+    background-size: cover;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: lightgray;
+    
+}
+
+#page-content {
+    
+    background-color: red;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+}
+.font-italic {
+    font-style: italic;
+}
