@@ -13,6 +13,10 @@ class UsersController < ApplicationController
         @articles = @user.articles
     end
 
+    def index
+        @users = User.all
+    end
+
     def update
         @user = User.find(params[:id])
         if @user.update(user_params)
