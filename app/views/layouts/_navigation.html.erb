@@ -18,19 +18,26 @@
             Articles
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Create an article", new_article_path, class:"dropdown-item" %></li>
+            <%if logged_in? %>
+              <li><%= link_to "Create an article", new_article_path, class:"dropdown-item" %></li>
+            <% end %>
             <li><%= link_to "Show articles", articles_path, class:"dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <!-- comment -->
       </ul>
 
       <ul class="d-flex navbar-nav mb-2 mb-lg-0">
         <%if logged_in? %>
-          <li class="nav-item">
-            <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
+          <li class="nav-item dropdown">
+            <a style={{ margin: 0 }} class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.username.capitalize %>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile page", user_path(current_user), class:"dropdown-item" %></li>
+              <li><%= link_to "Edit profile", edit_user_path(current_user), class:"dropdown-item" %></li>
+            </ul>
           </li>
           <li class="nav-item">
             <%= link_to "Logout", logout_path, class: "nav-link",  data: { "turbo-method": :delete, 'turbo-confirm': 'Are you sure?' }%>
